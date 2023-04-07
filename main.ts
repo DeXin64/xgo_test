@@ -1,0 +1,10 @@
+xgo.init_xgo_serial(SerialPin.P14, SerialPin.P13)
+xgo.clmap_stable(xgo.clmap_stable_enum.Stable)
+basic.forever(function () {
+    xgo.Manipulator_clampZ(-95)
+    xgo.translational_motion(xgo.translation_xyz_enum.Z, 97)
+    basic.pause(1000)
+    xgo.Manipulator_clampZ(-95)
+    xgo.translational_motion(xgo.translation_xyz_enum.Z, 5)
+    basic.pause(1000)
+})
